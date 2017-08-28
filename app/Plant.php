@@ -22,4 +22,15 @@ class Plant extends Model
   {
       return $this->belongsToMany('App\Treatment');
   }
+
+  /**
+   * Scope a query to only include diseases by name.
+   *
+   * @param \Illuminate\Database\Eloquent\Builder $query
+   * @return \Illuminate\Database\Eloquent\Builder
+   */
+  public function scopeByName($query, $data)
+  {
+      return $query->where('name', 'LIKE', "%{$data}%");
+  }
 }
