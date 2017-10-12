@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 // TODO: mejorar presentación del buscador
-// TODO: cambiar action para AJAX
-// TODO: actualizar listado con respuesta AJAX
 
 class SearchController extends Controller
 {
@@ -40,6 +38,18 @@ class SearchController extends Controller
         break;
       }
 
-      return $data;
-    }
+      $datapack = [
+        'data' => $data,
+        'type' => $type,
+        'keywords' => $keywords
+      ];
+
+      if($type == 'd')
+        return view("search.results.diseases", $datapack);
+      else if($type == 'p')
+        return view("search.results.plants", $datapack);
+      else
+        return view("search.results.error", $datapack);
+
+  }
 }
