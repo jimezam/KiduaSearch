@@ -23,11 +23,11 @@ class SearchController extends Controller
       switch($type)
       {
         case 'd':     // diseases
-          $data = \App\Disease::byName($keywords)->orderBy('name')->get();
+          $data = \App\Disease::byName($keywords)->orderBy('name')->paginate(10);
         break;
 
         case 'p':     // plants
-          $data = \App\Plant::byName($keywords)->orderBy('name')->get();
+          $data = \App\Plant::byName($keywords)->orderBy('name')->paginate(10);
         break;
 
         default:      // other

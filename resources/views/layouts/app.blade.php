@@ -27,9 +27,10 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <!-- Branding Image -->
+                    <!-- Branding Image -->                    
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <!-- {{ config('app.name', 'Laravel') }} -->
+                        Inicio
                     </a>
                 </div>
 
@@ -70,6 +71,11 @@
                 </div>
             </div>
         </nav>
+
+        <div class="container page-header">
+        <h1>Kidua Search<br>
+            <small>Buscador de información del proyecto Kidua</small></h1>
+        </div>
 
         @yield('content')
     </div>
