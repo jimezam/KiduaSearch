@@ -4,11 +4,22 @@
 
   @foreach($data as $plant)
 
+  <?php
+
+  $plantName = str_replace($keywords, "<mark>".$keywords."</mark>", $plant->name);
+  $plantScientificName = str_replace($keywords, "<mark>".$keywords."</mark>", $plant->scientific_name);
+
+  ?>
+
   <div class="panel panel-default">
     <div class="panel-heading" style="background-color: #f5f5f5;">
       <div class="pull-left">
-        <h3 class="panel-title text-capitalize" style="font-size: 20px">{{ $plant->name }}</h3>
-        <em class="text-capitalize">{{ $plant->scientific_name }}</em> <br>
+        <h3 class="panel-title text-capitalize" style="font-size: 20px">
+          {!! $plantName !!}
+        </h3>
+        <em class="text-capitalize">
+          {!! $plantScientificName !!}
+        </em> <br>
       </div>
       <div class="panel-title pull-right">
         @if(strlen(trim($plant->url)) > 0)
