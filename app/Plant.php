@@ -29,8 +29,11 @@ class Plant extends Model
    * @param \Illuminate\Database\Eloquent\Builder $query
    * @return \Illuminate\Database\Eloquent\Builder
    */
-  public function scopeByName($query, $data)
+  public function scopeByName($query, $keywords)
   {
-      return $query->where('name', 'LIKE', "%{$data}%");
+      return $query
+                -> where('name', 'LIKE', "%{$keywords}%")
+                -> orWhere('scientific_name', 'LIKE', "%{$keywords}%")
+                -> orWhere('id', '=', $keywords);
   }
 }

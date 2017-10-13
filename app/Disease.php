@@ -31,6 +31,8 @@ class Disease extends Model
    */
   public function scopeByName($query, $data)
   {
-      return $query->where('name', 'LIKE', "%{$data}%");
+      return $query
+        -> where('name', 'LIKE', "%{$keywords}%")
+        -> orWhere('id', '=', $keywords);
   }
 }
