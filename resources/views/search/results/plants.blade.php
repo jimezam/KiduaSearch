@@ -25,7 +25,9 @@
           @foreach($treatment->diseases as $disease)
 
             <li class="list-group-item">
-              <a href="{{ route('search', ['type' => 'd', 'keywords' => $disease->id]) }}">{{ $disease->name }}</a>
+              <a href="{{ route('search', ['type' => 'd', 'keywords' => $disease->id]) }}">
+                <span class="text-capitalize">{{ $disease->name }}</span>
+              </a>
             </li>
 
           @endforeach

@@ -29,7 +29,7 @@ class Disease extends Model
    * @param \Illuminate\Database\Eloquent\Builder $query
    * @return \Illuminate\Database\Eloquent\Builder
    */
-  public function scopeByName($query, $data)
+  public function scopeByName($query, $keywords)
   {
       return $query
         -> where('name', 'LIKE', "%{$keywords}%")

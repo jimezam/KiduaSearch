@@ -4,21 +4,58 @@
 
   @foreach($data as $disease)
 
-    <p>{{ $disease->id }}</p>
-    <p>{{ $disease->name }}</p>
-    <p>{{ $disease->created_at }}</p>
-    <p>{{ $disease->updated_at }}</p>
+  <div class="panel panel-default">
+    <div class="panel-heading" style="background-color: #f5f5f5;">
+        <h3 class="panel-title text-capitalize" style="font-size: 20px">{{ $disease->name }}</h3>
+    </div>
+    <div class="panel-body">
+      <h4>Ver tratamientos</h1>
+      <ul class="list-group">
+        @foreach($disease->treatments as $treatment)
 
-    @foreach($disease->treatments as $treatment)
+          <?php 
+          
+          $plants = []; 
+          
+          foreach($treatment->plants as $plant)
+          {
+            array_push($plants, $plant->name);
+          }
 
-      @foreach($treatment->plants as $plant)
+          $plantList = implode(',', $plants);
 
-        <p>> {{ $plant->name }}</p>
+          ?>
 
-      @endforeach
+          <li class="list-group-item">
+            <a href="xxx">
+              Basado en <span class="text-capitalize">{{ $plantList }}</span>
+            </a>
+          </li>
 
-    @endforeach
+        @endforeach
+      </ul>
+
+      <h4>Plantas relacionadas</h1>
+      <ul class="list-group">
+        @foreach($disease->treatments as $treatment)
+
+          @foreach($treatment->plants as $plant)
+
+            <li class="list-group-item">
+              <a href="{{ route('search', ['type' => 'p', 'keywords' => $plant->id]) }}">
+                <span class="text-capitalize">{{ $plant->name }}</span>
+              </a>
+            </li>
+
+          @endforeach
+
+        @endforeach
+      </ul>
+    </div>
+  </div>
 
   @endforeach
 
+  {!! $data->render() !!}
+  
 @endsection
