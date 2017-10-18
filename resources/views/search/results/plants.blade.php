@@ -6,8 +6,8 @@
 
   <?php
 
-  $plantName = str_replace($keywords, "<mark>".$keywords."</mark>", $plant->name);
-  $plantScientificName = str_replace($keywords, "<mark>".$keywords."</mark>", $plant->scientific_name);
+  $plantName = str_ireplace($keywords, "<mark>".$keywords."</mark>", $plant->name);
+  $plantScientificName = str_ireplace($keywords, "<mark>".$keywords."</mark>", $plant->scientific_name);
 
   ?>
 
@@ -24,7 +24,7 @@
       <div class="panel-title pull-right">
         @if(strlen(trim($plant->url)) > 0)
           <a href="{{ $plant->url }}" target="_blank"><button type="button" class="btn btn-warning">Ver</button></a>
-        @endif        
+        @endif
       </div>
       <div class="clearfix"></div>
     </div>
@@ -51,5 +51,5 @@
   @endforeach
 
   {!! $data->render() !!}
-  
+
 @endsection
