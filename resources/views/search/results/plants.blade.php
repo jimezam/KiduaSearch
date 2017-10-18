@@ -50,6 +50,7 @@
 
   @endforeach
 
-  {!! $data->render() !!}
+  <!-- {!! $data->render() !!} -->
+  {!! $data->appends(['keywords' => $keywords, 'type' => $type])->links() !!}
 
 @endsection
