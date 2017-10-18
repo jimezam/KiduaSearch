@@ -81,12 +81,14 @@
         </div>
 
         @yield('content')
+
+        <br><br><br><br><br>
     </div>
 
     <footer style="margin-bottom: 0px" class="navbar navbar-default footer navbar-fixed-bottom">
       <div class="container text-center">
 
-        <div class="panel">
+        <div class="panel" style="margin-bottom: 0px">
           <div class="panel-body">
             <div class="col-xs-6">
               <p class="text-muted">

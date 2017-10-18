@@ -44,12 +44,18 @@ class SearchController extends Controller
         'keywords' => $keywords
       ];
 
-      if($type == 'd')
-        return view("search.results.diseases", $datapack);
-      else if($type == 'p')
-        return view("search.results.plants", $datapack);
+      if(($type == 'd' | $type == 'p') & count($data) == 0)
+      {
+        return view("search.results.empty", $datapack);
+      }
       else
-        return view("search.results.error", $datapack);
-
+      {
+        if($type == 'd')
+          return view("search.results.diseases", $datapack);
+        else if($type == 'p')
+          return view("search.results.plants", $datapack);
+        else
+          return view("search.results.error", $datapack);
+      }
   }
 }
