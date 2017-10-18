@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 */
 
+
 Auth::routes();
 
 Route::get('/', 'SearchController@index')->name('explorer');
@@ -24,3 +25,21 @@ Route::get('/', 'SearchController@index')->name('explorer');
 Route::get('/search','SearchController@search')->name('search');
 
 // Route::get('/home', 'HomeController@index')->name('home');
+
+
+// DISABLE login/logout/register features of portal //
+//////////////////////////////////////////////////////
+
+Route::any('register', function(){
+    return redirect('/');
+});
+
+/*
+Route::any('login', function(){
+    return redirect('/');
+});
+
+Route::any('logout', function(){
+    return redirect('/');
+});
+*/
