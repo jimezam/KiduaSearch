@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jorge I. Meza">
+    <meta name="description" content="Kidua Search for plants and diseases of Kidua Portal">
+    <meta name="keywords" content="Plantas medicinales, Enfermedades, Tratamientos, Buscador, Kidua">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -79,6 +82,30 @@
 
         @yield('content')
     </div>
+
+    <footer style="margin-bottom: 0px" class="navbar navbar-default">
+      <div class="container text-center">
+
+        <div class="panel">
+          <div class="panel-body">
+            <div class="col-xs-6">
+              <p class="text-muted">
+                Portal de plantas medicinales Kidua <br>
+                <a href="https://kiduaportal.wordpress.com/" target="_top">https://kiduaportal.wordpress.com/</a>
+              </p>
+            </div>
+
+            <div class="col-xs-6">
+              <p class="text-muted">
+                Kidua Search <br>
+                <a href="https://github.com/jimezam/KiduaSearch" target="_top">https://github.com/jimezam/KiduaSearch</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
