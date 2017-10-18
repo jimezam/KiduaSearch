@@ -83,7 +83,7 @@
         @yield('content')
     </div>
 
-    <footer style="margin-bottom: 0px" class="navbar navbar-default">
+    <footer style="margin-bottom: 0px" class="navbar navbar-default footer navbar-fixed-bottom">
       <div class="container text-center">
 
         <div class="panel">
@@ -98,7 +98,7 @@
             <div class="col-xs-6">
               <p class="text-muted">
                 Kidua Search <br>
-                <a href="https://github.com/jimezam/KiduaSearch" target="_top">https://github.com/jimezam/KiduaSearch</a>
+                <a href="https://github.com/jimezam/KiduaSearch" target="_blank">https://github.com/jimezam/KiduaSearch</a>
               </p>
             </div>
           </div>
