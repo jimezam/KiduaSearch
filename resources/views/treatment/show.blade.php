@@ -5,7 +5,7 @@
 <div class="container">
 
   <div class="panel panel-default">
-    <div class="panel-heading">
+    <div class="panel-heading" style="background-color: #F5F5F5">
       <h3 class="panel-title text-capitalize">
         Tratamiento #{{ $data->id }}
         {{ (isset($data->name) && strlen(trim($data->name)) > 0) ? ' - '.$data->name.'' : "" }}
@@ -15,7 +15,7 @@
       <div class="table-responsive">
         <table class="table">
           <tbody>
-            <tr>
+            <tr style="border-top: 0px">
               <th scope="row">Enfermedades tratadas</th>
               <td class="text-capitalize">
                 <?php
@@ -63,7 +63,6 @@
         </table>
       </div>
     </div>
-    <div class="panel-footer" style="height: 25px;">&nbsp;</div>
   </div>
 
   <button type="button" class="btn btn-info" onclick="history.back()">Volver</button>
