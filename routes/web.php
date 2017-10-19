@@ -24,6 +24,8 @@ Route::get('/', 'SearchController@index')->name('explorer');
 
 Route::get('/search','SearchController@search')->name('search');
 
+Route::get('treatment/{treatment}','TreatmentController@show')->name('treatment.show');
+
 // Route::get('/home', 'HomeController@index')->name('home');
 
 

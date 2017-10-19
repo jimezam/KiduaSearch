@@ -35,7 +35,7 @@
           ?>
 
           <li class="list-group-item">
-            <a href="xxx">
+            <a href="{{ route('treatment.show', $treatment->id) }}">
               Basado en <span class="text-capitalize">{{ $plantList }}</span>
             </a>
           </li>
