@@ -33,6 +33,6 @@ class Disease extends Model
   {
       return $query
         -> where('name', 'LIKE', "%{$keywords}%")
-        -> orWhere('id', '=', $keywords);
+        -> orWhere('id', '=', intval($keywords));
   }
 }
